@@ -6,17 +6,17 @@ class TableSingleton {
     private static final TableSingleton ourInstance = new TableSingleton();
 
 
-    private ArrayList<Boolean>table;
+    private ArrayList<Integer>table;
 
     static TableSingleton getInstance() {
         return ourInstance;
     }
 
-    public ArrayList<Boolean> getTable() {
+    public ArrayList<Integer> getTable() {
         return table;
     }
 
-    public void setTable(ArrayList<Boolean> table) {
+    public void setTable(ArrayList<Integer> table) {
         this.table = table;
     }
 

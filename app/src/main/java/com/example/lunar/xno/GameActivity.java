@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -38,7 +39,22 @@ buttonTable=new ArrayList<>(9);
             @Override
             public void onClick(View view) {
                 int i= finalINT;
-                
+                UtilClass utilClass = null;
+                if(utilClass.who){ //если ход Х
+
+                    if(utilClass.putx(i)){
+                        //nothing
+                    } else {
+                        showToast(getResources().getString(R.string.cantput));
+                    }
+
+                } else { //если ход O
+                    if(utilClass.puto(i)){
+                        //nothing
+                    } else {
+                        showToast(getResources().getString(R.string.cantput));
+                    }
+                }
             }
         };
 
@@ -68,6 +84,10 @@ buttonTable=new ArrayList<>(9);
                                     )
                     );
         }
+    }
+
+    void showToast(String text){
+        Toast.makeText(GameActivity.this,text,Toast.LENGTH_SHORT);
     }
 
 }
