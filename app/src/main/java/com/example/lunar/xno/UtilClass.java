@@ -4,7 +4,7 @@ import static com.example.lunar.xno.TableSingleton.*;
 
 public class UtilClass {
 
-    Boolean who=false;
+    Boolean who= Boolean.FALSE;
 
     TableSingleton instance= getInstance();
 
@@ -14,10 +14,10 @@ public class UtilClass {
         return false;
     }
 
-    public String genSymbol(int b){
-        if(b==2){
+    public String genSymbol(){
+        if(who){
             return "X";
-        } else if(b==1) {
+        } else if(!who) {
             return "O";
         } else {
             return " ";

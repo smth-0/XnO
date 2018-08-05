@@ -22,6 +22,9 @@ class TableSingleton {
 
     private TableSingleton() {
         table= new ArrayList<>(9);
+        for(int i=0;i<9;i++){
+            table.add(0);
+        }
     }
 
 }
