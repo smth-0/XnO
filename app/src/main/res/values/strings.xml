@@ -4,4 +4,5 @@
     <string name="_1_player">1 player</string>
     <string name="_2_players">2 players</string>
     <string name="cantput">you can\'t put to this place</string>
+    <string name="clear">CLEAR</string>
 </resources>
