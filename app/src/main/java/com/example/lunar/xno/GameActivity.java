@@ -1,6 +1,7 @@
 package com.example.lunar.xno;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -77,7 +78,11 @@ buttonTable=new ArrayList<>(9);
                                 showToast(getResources().getString(R.string.cantput));
                             }
                         }
-                        utilClass.detectWin();
+                    if(utilClass.detectWin()){
+                        Intent intent = new Intent(GameActivity.this, WinActivity.class);
+                        startActivity(intent);
+                        Log.d("XNOGAME","Win was detected, wineer is " + TableSingleton.getInstance().getWho());
+                    }
                         syncTable();
                     }
                 });
@@ -91,7 +96,6 @@ buttonTable=new ArrayList<>(9);
     void syncTable(){
 
         UtilClass util = new UtilClass();
-        TableSingleton instanse = TableSingleton.getInstance();
 
 
 
@@ -103,6 +107,9 @@ buttonTable=new ArrayList<>(9);
                                     .genSymbol(i)
                     );
         }
+
+
+
     }
 
     void showToast(String text){
